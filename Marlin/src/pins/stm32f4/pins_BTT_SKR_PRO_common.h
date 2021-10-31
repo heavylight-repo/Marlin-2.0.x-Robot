@@ -23,6 +23,11 @@
 
 #include "env_validate.h"
 
+#if ENABLED(LEANTRONIC)
+  //#define IR_DETECTOR                          PE10
+  #define IR_DETECTOR                          PA1
+#endif
+
 // If you have the BigTreeTech driver expansion module, enable BTT_MOTOR_EXPANSION
 // https://github.com/bigtreetech/BTT-Expansion-module/tree/master/BTT%20EXP-MOT
 //#define BTT_MOTOR_EXPANSION
@@ -37,8 +42,8 @@
 
 // Use one of these or SDCard-based Emulation will be used
 #if NO_EEPROM_SELECTED
-  //#define SRAM_EEPROM_EMULATION                 // Use BackSRAM-based EEPROM emulation
-  #define FLASH_EEPROM_EMULATION                  // Use Flash-based EEPROM emulation
+  #define SRAM_EEPROM_EMULATION                 // Use BackSRAM-based EEPROM emulation //Tobbe
+  //#define FLASH_EEPROM_EMULATION                  // Use Flash-based EEPROM emulation
 #endif
 
 #if ENABLED(FLASH_EEPROM_EMULATION)
@@ -79,6 +84,7 @@
 #else
   #define X_MIN_PIN                         PB10  // X-
   #define X_MAX_PIN                         PE15  // E0
+
 #endif
 
 #ifdef Y_STALL_SENSITIVITY
@@ -104,6 +110,10 @@
   #define Z_MIN_PIN                         PG8   // Z-
   #define Z_MAX_PIN                         PG5   // E2
 #endif
+
+  #define I_MIN_PIN                         PE15  //Tobbe
+  #define J_MIN_PIN                         PE15  //Tobbe
+  #define K_MIN_PIN                         PE15  //Tobbe
 
 //
 // Z Probe must be this pin
