@@ -749,7 +749,8 @@ namespace Language_en {
   LSTR MSG_USB_DISK                       = _UxGT("USB Disk");
 
   // These strings can be the same in all languages
-  LSTR MSG_MARLIN                         = _UxGT("Marlin");
+//  LSTR MSG_MARLIN                         = _UxGT("Marlin"); //Tobbe
+  LSTR MSG_MARLIN                         = _UxGT("Leantronic"); //Tobbe
   LSTR MSG_SHORT_DAY                      = _UxGT("d"); // One character only
   LSTR MSG_SHORT_HOUR                     = _UxGT("h"); // One character only
   LSTR MSG_SHORT_MINUTE                   = _UxGT("m"); // One character only
