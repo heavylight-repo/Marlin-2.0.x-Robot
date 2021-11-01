@@ -140,7 +140,7 @@ void MarlinEthernet::check() {
       break;
 
     case CONNECTING:
-      telnetClient.println("Marlin " SHORT_BUILD_VERSION);
+      telnetClient.println("Leantronic " SHORT_BUILD_VERSION); //Tobbe
       #if defined(STRING_DISTRIBUTION_DATE) && defined(STRING_CONFIG_H_AUTHOR)
         telnetClient.println(
           " Last Updated: " STRING_DISTRIBUTION_DATE
