@@ -112,8 +112,11 @@
 #endif
 
   #define I_MIN_PIN                         PE15  //Tobbe
-  #define J_MIN_PIN                         PE10  //Tobbe
-  #define K_MIN_PIN                         PG5  //Tobbe
+  #define J_MIN_PIN                         PE15  //Tobbe
+  #define K_MIN_PIN                         PE15  //Tobbe
+
+  //#define J_MIN_PIN                         PE10  //Tobbe
+  //#define K_MIN_PIN                         PG5  //Tobbe
 
 //
 // Z Probe must be this pin

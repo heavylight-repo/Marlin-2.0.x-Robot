@@ -42,12 +42,21 @@ void GcodeSuite::M2001() { //Tobbe
     count_samples = parser.value_int();
     SERIAL_ECHO_MSG("Count: ", count_samples);
   }
+  
   if (count_samples > total_samples) {
+    SERIAL_ECHO_MSG("Count bigger then Total");
 
-      if (IS_SD_PRINTING()){
-        card.flag.abort_sd_printing = true;         //Abort the current SD print job (started with M24)
-        }
+    if (IS_SD_PRINTING()) {
+      card.abortFilePrintSoon();
+      SERIAL_ECHO_MSG("Abort");
+    }
+    else if (card.isMounted())
+      card.closefile();
 
-      count_samples = 0;
+      //if (IS_SD_PRINTING()){
+      //  card.flag.abort_sd_printing = true;         //Abort the current SD print job (started with M24)
+      //  }
+
+    count_samples = 0;
   }
 }
