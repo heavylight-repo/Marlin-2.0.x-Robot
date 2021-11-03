@@ -1178,6 +1178,9 @@ private:
     static void M1004();
   #endif
 
+    static void M2000(); //Tobbe
+    static void M2001(); //Tobbe
+
   #if ENABLED(MAX7219_GCODE)
     static void M7219();
   #endif

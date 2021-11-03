@@ -72,7 +72,6 @@
 #define STRING_CONFIG_H_AUTHOR "Leantronic" // Who made the changes.
 //#define CUSTOM_VERSION_FILE Version.h // Path from the root directory (no quotes)
 
-//define LEANTRONIC //Set to enable Leantronic features //Tobbe
 /**
  * *** VENDORS PLEASE READ ***
  *
