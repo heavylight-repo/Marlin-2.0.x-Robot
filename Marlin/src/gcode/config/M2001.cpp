@@ -28,35 +28,32 @@
 #include "../../sd/cardreader.h"
 #include "../../inc/MarlinConfig.h"
 
+static uint16_t total_samples2 = 1;
+static uint16_t count_samples2 = 0;
+
 void GcodeSuite::M2001() { //Tobbe
 
-  static uint16_t total_samples = 1;
-  static uint16_t count_samples = 0;
+  //static uint16_t total_samples;
+  //static uint16_t count_samples;
 
   if (parser.seenval('S')) { 
-    total_samples = parser.value_int();
-    SERIAL_ECHO_MSG("Total: ", total_samples);
+    total_samples2 = parser.value_int();
+    //SERIAL_ECHO_MSG("Total: ", total_samples);
   }
 
   if (parser.seenval('C')) {  
-    count_samples = parser.value_int();
-    SERIAL_ECHO_MSG("Count: ", count_samples);
+    count_samples2 = parser.value_int();
+    //SERIAL_ECHO_MSG("Count: ", count_samples);
+    //SERIAL_ECHO_MSG("Total: ", total_samples);
   }
   
-  if (count_samples > total_samples) {
-    SERIAL_ECHO_MSG("Count bigger then Total");
+  if (count_samples2 > total_samples2) {
+    //SERIAL_ECHO_MSG("Abort");
 
     if (IS_SD_PRINTING()) {
       card.abortFilePrintSoon();
-      SERIAL_ECHO_MSG("Abort");
     }
     else if (card.isMounted())
       card.closefile();
-
-      //if (IS_SD_PRINTING()){
-      //  card.flag.abort_sd_printing = true;         //Abort the current SD print job (started with M24)
-      //  }
-
-    count_samples = 0;
   }
 }

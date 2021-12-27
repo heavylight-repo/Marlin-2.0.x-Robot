@@ -927,8 +927,8 @@
  * Override with M92
  *                                      X, Y, Z [, I [, J [, K]]], E0 [, E1[, E2...]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80.2, 79.8, 212, 212, 400, 400 } //Fidde (16Microstep)
-//#define DEFAULT_AXIS_STEPS_PER_UNIT   { 40.1, 39.9, 106, 106, 200, 200 } //Fidde (8Microstep)
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80.2, 80.2, 212, 212, 400, 400 } //Fidde (16Microstep)
+//#define DEFAULT_AXIS_STEPS_PER_UNIT   { 40.1, 40.1, 106, 106, 200, 200 } //Fidde (8Microstep)
 //#define DEFAULT_AXIS_STEPS_PER_UNIT   { 20, 20, 53, 53, 100, 100 } //Fidde (4Microstep)
 
 //#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 400, 400, 400 } //Tobbe
@@ -1325,8 +1325,8 @@
 // @section machine
 
 // Invert the stepper direction. Change (or reverse the motor connector) if an axis goes the wrong way.
-#define INVERT_X_DIR false //Leantronic Fiddes robot true min false
-#define INVERT_Y_DIR false //Leantronic Fiddes robot true min false
+#define INVERT_X_DIR true //Leantronic Fiddes robot true min false
+#define INVERT_Y_DIR true //Leantronic Fiddes robot true min false
 #define INVERT_Z_DIR false
 #define INVERT_I_DIR false
 #define INVERT_J_DIR false
@@ -1373,8 +1373,8 @@
 // @section machine
 
 // The size of the printable area
-#define X_BED_SIZE 1000 //Tobbe
-#define Y_BED_SIZE 1000 //Tobbe
+#define X_BED_SIZE 818 //Tobbe
+#define Y_BED_SIZE 300 //Tobbe
  //Tobbe
 // Travel limits (mm) after homing, corresponding to endstop positions.
 #define X_MIN_POS 0
@@ -1411,7 +1411,7 @@
 #endif
 
 // Max software endstops constrain movement within maximum coordinate bounds
-//#define MAX_SOFTWARE_ENDSTOPS //Tobbe
+#define MAX_SOFTWARE_ENDSTOPS //Tobbe
 #if ENABLED(MAX_SOFTWARE_ENDSTOPS)
   #define MAX_SOFTWARE_ENDSTOP_X
   #define MAX_SOFTWARE_ENDSTOP_Y
